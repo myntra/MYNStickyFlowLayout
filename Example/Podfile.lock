@@ -1,0 +1,14 @@
+PODS:
+  - MYNStickyFlowLayout (0.0.1)
+
+DEPENDENCIES:
+  - MYNStickyFlowLayout (from `../MYNStickyFlowLayout.podspec`)
+
+EXTERNAL SOURCES:
+  MYNStickyFlowLayout:
+    :path: ../MYNStickyFlowLayout.podspec
+
+SPEC CHECKSUMS:
+  MYNStickyFlowLayout: 5d90465cb5ae10dc81ba6e2154bceae0899a1b27
+
+COCOAPODS: 0.33.1

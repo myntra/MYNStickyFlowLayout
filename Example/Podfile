@@ -1,0 +1,9 @@
+target "StickFlowLayoutDemo" do
+
+pod 'MYNStickyFlowLayout', :path => '../MYNStickyFlowLayout.podspec'
+
+end
+
+target "StickFlowLayoutDemoTests" do
+
+end

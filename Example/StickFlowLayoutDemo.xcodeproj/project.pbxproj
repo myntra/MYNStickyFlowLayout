@@ -21,7 +21,7 @@
 		8BD22B5619A3912C003C12CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BD22B5419A3912C003C12CE /* InfoPlist.strings */; };
 		8BD22B5819A3912C003C12CE /* StickFlowLayoutDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B5719A3912C003C12CE /* StickFlowLayoutDemoTests.m */; };
 		8BD22B6319A391A7003C12CE /* MYNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B6219A391A7003C12CE /* MYNViewController.m */; };
-		8BD22B6619A393EF003C12CE /* MYNStickyFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B6519A393EF003C12CE /* MYNStickyFlowLayout.m */; };
+		C4F4801986D548E5BC0527C8 /* libPods-StickFlowLayoutDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 007E5D70DD45459A95672093 /* libPods-StickFlowLayoutDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		007E5D70DD45459A95672093 /* libPods-StickFlowLayoutDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StickFlowLayoutDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		411D29CE5A5340998290C24A /* Pods-StickFlowLayoutDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickFlowLayoutDemo.xcconfig"; path = "Pods/Pods-StickFlowLayoutDemo.xcconfig"; sourceTree = "<group>"; };
 		8BD22B2919A3912C003C12CE /* StickFlowLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickFlowLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD22B2C19A3912C003C12CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8BD22B2E19A3912C003C12CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,8 +56,6 @@
 		8BD22B5719A3912C003C12CE /* StickFlowLayoutDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickFlowLayoutDemoTests.m; sourceTree = "<group>"; };
 		8BD22B6119A391A7003C12CE /* MYNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNViewController.h; sourceTree = "<group>"; };
 		8BD22B6219A391A7003C12CE /* MYNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNViewController.m; sourceTree = "<group>"; };
-		8BD22B6419A393EF003C12CE /* MYNStickyFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNStickyFlowLayout.h; sourceTree = "<group>"; };
-		8BD22B6519A393EF003C12CE /* MYNStickyFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNStickyFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +66,7 @@
 				8BD22B2F19A3912C003C12CE /* CoreGraphics.framework in Frameworks */,
 				8BD22B3119A3912C003C12CE /* UIKit.framework in Frameworks */,
 				8BD22B2D19A3912C003C12CE /* Foundation.framework in Frameworks */,
+				C4F4801986D548E5BC0527C8 /* libPods-StickFlowLayoutDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +90,7 @@
 				8BD22B5119A3912C003C12CE /* StickFlowLayoutDemoTests */,
 				8BD22B2B19A3912C003C12CE /* Frameworks */,
 				8BD22B2A19A3912C003C12CE /* Products */,
+				411D29CE5A5340998290C24A /* Pods-StickFlowLayoutDemo.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +110,7 @@
 				8BD22B2E19A3912C003C12CE /* CoreGraphics.framework */,
 				8BD22B3019A3912C003C12CE /* UIKit.framework */,
 				8BD22B4B19A3912C003C12CE /* XCTest.framework */,
+				007E5D70DD45459A95672093 /* libPods-StickFlowLayoutDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,8 +123,6 @@
 				8BD22B3E19A3912C003C12CE /* Main.storyboard */,
 				8BD22B6119A391A7003C12CE /* MYNViewController.h */,
 				8BD22B6219A391A7003C12CE /* MYNViewController.m */,
-				8BD22B6419A393EF003C12CE /* MYNStickyFlowLayout.h */,
-				8BD22B6519A393EF003C12CE /* MYNStickyFlowLayout.m */,
 				8BD22B4419A3912C003C12CE /* Images.xcassets */,
 				8BD22B3319A3912C003C12CE /* Supporting Files */,
 			);
@@ -164,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BD22B5B19A3912C003C12CE /* Build configuration list for PBXNativeTarget "StickFlowLayoutDemo" */;
 			buildPhases = (
+				3F4504D6C1764CB38DEEFF38 /* Check Pods Manifest.lock */,
 				8BD22B2519A3912C003C12CE /* Sources */,
 				8BD22B2619A3912C003C12CE /* Frameworks */,
 				8BD22B2719A3912C003C12CE /* Resources */,
+				667C00DB4EB74D8B9583B41F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,13 +253,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3F4504D6C1764CB38DEEFF38 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		667C00DB4EB74D8B9583B41F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-StickFlowLayoutDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8BD22B2519A3912C003C12CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8BD22B6319A391A7003C12CE /* MYNViewController.m in Sources */,
-				8BD22B6619A393EF003C12CE /* MYNStickyFlowLayout.m in Sources */,
 				8BD22B3919A3912C003C12CE /* main.m in Sources */,
 				8BD22B3D19A3912C003C12CE /* MYNAppDelegate.m in Sources */,
 			);
@@ -380,6 +415,7 @@
 		};
 		8BD22B5C19A3912C003C12CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 411D29CE5A5340998290C24A /* Pods-StickFlowLayoutDemo.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -393,6 +429,7 @@
 		};
 		8BD22B5D19A3912C003C12CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 411D29CE5A5340998290C24A /* Pods-StickFlowLayoutDemo.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -463,6 +500,7 @@
 				8BD22B5D19A3912C003C12CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8BD22B5E19A3912C003C12CE /* Build configuration list for PBXNativeTarget "StickFlowLayoutDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +509,7 @@
 				8BD22B6019A3912C003C12CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
