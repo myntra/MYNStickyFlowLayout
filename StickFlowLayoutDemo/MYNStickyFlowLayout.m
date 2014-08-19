@@ -102,16 +102,23 @@
     attributes.zIndex = 1024;
     attributes.hidden = NO;
 
-    CGRect currentBounds = self.collectionView.bounds;
+    // last point of section minus height of header
     CGFloat sectionMaxY = CGRectGetMaxY(lastCellAttributes.frame) - attributes.frame.size.height;
-    CGFloat y = CGRectGetMaxY(currentBounds) - currentBounds.size.height + self.collectionView.contentInset.top;
 
-    CGFloat maxY = MIN(MAX(y, attributes.frame.origin.y), sectionMaxY);
+    // top of the view
+    CGFloat viewMinY = CGRectGetMinY(self.collectionView.bounds) + self.collectionView.contentInset.top;
 
-//    NSLog(@"%.2f, %.2f, %.2f", y, maxY, sectionMaxY);
+    // larger of sticky position or actual position
+    CGFloat largerYPosition = MAX(viewMinY, attributes.frame.origin.y);
+    
+    // smaller of calculated position or end of section
+    CGFloat finalPosition = MIN(largerYPosition, sectionMaxY);
 
+//    NSLog(@"%.2f, %.2f, %.2f, %.2f", sectionMaxY, viewMinY, largerYPosition, finalPosition);
+
+    // update y position
     CGPoint origin = attributes.frame.origin;
-    origin.y = maxY;
+    origin.y = finalPosition;
 
     attributes.frame = (CGRect){
         origin,
@@ -123,22 +130,30 @@
 {
     attributes.zIndex = 1024;
     attributes.hidden = NO;
-        
-    CGRect currentBounds = self.collectionView.bounds;
-    CGFloat sectionMaxY = CGRectGetMaxY(firstCellAttributes.frame) - attributes.frame.size.height;
-    CGFloat y = CGRectGetMaxY(currentBounds) - currentBounds.size.height + self.collectionView.contentInset.top;
     
-    CGFloat maxY = MIN(MAX(y, attributes.frame.origin.y), sectionMaxY);
+    // starting point of section
+    CGFloat sectionMinY = CGRectGetMaxY(firstCellAttributes.frame);
     
-//    NSLog(@"%.2f, %.2f, %.2f", y, maxY, sectionMaxY);
+    // bottom of the view
+    CGFloat viewMaxY = CGRectGetMaxY(self.collectionView.bounds) - self.collectionView.contentInset.bottom - attributes.frame.size.height;
     
+    // smaller of sticky position or actual position
+    CGFloat smallerYPosition = MIN(viewMaxY, attributes.frame.origin.y);
+    
+    // larger of calculated position or end of section
+    CGFloat finalPosition = MAX(smallerYPosition, sectionMinY);
+    
+//    NSLog(@"%.2f, %.2f, %.2f, %.2f", sectionMinY, viewMaxY, smallerYPosition, finalPosition);
+    
+    // update y position
     CGPoint origin = attributes.frame.origin;
-    origin.y = maxY;
+    origin.y = finalPosition;
     
     attributes.frame = (CGRect){
         origin,
         attributes.frame.size
     };
+
 }
 
 @end
