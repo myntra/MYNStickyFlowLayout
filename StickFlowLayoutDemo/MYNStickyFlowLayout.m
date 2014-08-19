@@ -17,20 +17,32 @@
     NSMutableDictionary *headers = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *lastCells = [[NSMutableDictionary alloc] init];
 
+    NSMutableDictionary *firstCells = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *footers = [[NSMutableDictionary alloc] init];
+
     [allItems enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UICollectionViewLayoutAttributes *attributes = obj;
-
         NSIndexPath *indexPath = attributes.indexPath;
+        
         if ([[obj representedElementKind] isEqualToString:UICollectionElementKindSectionHeader]) {
             [headers setObject:obj forKey:@(indexPath.section)];
+            
         } else if ([[obj representedElementKind] isEqualToString:UICollectionElementKindSectionFooter]) {
-            // Not implemeneted
+            [footers setObject:obj forKey:@(indexPath.section)];
+            
         } else {
-            UICollectionViewLayoutAttributes *currentAttribute = [lastCells objectForKey:@(indexPath.section)];
+            UICollectionViewLayoutAttributes *currentLastAttribute = [lastCells objectForKey:@(indexPath.section)];
 
             // Get the bottom most cell of that section
-            if ( ! currentAttribute || indexPath.row > currentAttribute.indexPath.row) {
+            if ( !currentLastAttribute || indexPath.row > currentLastAttribute.indexPath.row) {
                 [lastCells setObject:obj forKey:@(indexPath.section)];
+            }
+
+            UICollectionViewLayoutAttributes *currentFirstAttribute = [firstCells objectForKey:@(indexPath.section)];
+            
+            // Get the top most cell of that section
+            if ( !currentFirstAttribute || indexPath.row < currentFirstAttribute.indexPath.row) {
+                [firstCells setObject:obj forKey:@(indexPath.section)];
             }
         }
 
@@ -39,12 +51,13 @@
     }];
 
     [lastCells enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        NSIndexPath *indexPath = [obj indexPath];
+        UICollectionViewLayoutAttributes *attributes = obj;
+        NSIndexPath *indexPath = attributes.indexPath;
         NSNumber *indexPathKey = @(indexPath.section);
 
         UICollectionViewLayoutAttributes *header = headers[indexPathKey];
         // CollectionView automatically removes headers not in bounds
-        if ( ! header) {
+        if (!header) {
             header = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                                                           atIndexPath:[NSIndexPath indexPathForItem:0 inSection:indexPath.section]];
 
@@ -55,6 +68,25 @@
         [self updateHeaderAttributes:header lastCellAttributes:lastCells[indexPathKey]];
     }];
 
+    [firstCells enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        UICollectionViewLayoutAttributes *attributes = obj;
+        NSIndexPath *indexPath = attributes.indexPath;
+        NSNumber *indexPathKey = @(indexPath.section);
+        
+        UICollectionViewLayoutAttributes *footer = footers[indexPathKey];
+        // CollectionView automatically removes footers not in bounds
+        if (!footer) {
+            footer = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter
+                                                          atIndexPath:[NSIndexPath indexPathForItem:0 inSection:indexPath.section]];
+            
+            if (footer) {
+                [allItems addObject:footer];
+            }
+        }
+        [self updateFooterAttributes:footer firstCellAttributes:firstCells[indexPathKey]];
+        
+    }];
+    
     return allItems;
 }
 
@@ -67,21 +99,42 @@
 
 - (void)updateHeaderAttributes:(UICollectionViewLayoutAttributes *)attributes lastCellAttributes:(UICollectionViewLayoutAttributes *)lastCellAttributes
 {
-    CGRect currentBounds = self.collectionView.bounds;
     attributes.zIndex = 1024;
     attributes.hidden = NO;
 
-    CGPoint origin = attributes.frame.origin;
-
+    CGRect currentBounds = self.collectionView.bounds;
     CGFloat sectionMaxY = CGRectGetMaxY(lastCellAttributes.frame) - attributes.frame.size.height;
     CGFloat y = CGRectGetMaxY(currentBounds) - currentBounds.size.height + self.collectionView.contentInset.top;
 
     CGFloat maxY = MIN(MAX(y, attributes.frame.origin.y), sectionMaxY);
 
-    NSLog(@"%.2f, %.2f, %.2f", y, maxY, sectionMaxY);
+//    NSLog(@"%.2f, %.2f, %.2f", y, maxY, sectionMaxY);
 
+    CGPoint origin = attributes.frame.origin;
     origin.y = maxY;
 
+    attributes.frame = (CGRect){
+        origin,
+        attributes.frame.size
+    };
+}
+
+- (void)updateFooterAttributes:(UICollectionViewLayoutAttributes *)attributes firstCellAttributes:(UICollectionViewLayoutAttributes *)firstCellAttributes
+{
+    attributes.zIndex = 1024;
+    attributes.hidden = NO;
+        
+    CGRect currentBounds = self.collectionView.bounds;
+    CGFloat sectionMaxY = CGRectGetMaxY(firstCellAttributes.frame) - attributes.frame.size.height;
+    CGFloat y = CGRectGetMaxY(currentBounds) - currentBounds.size.height + self.collectionView.contentInset.top;
+    
+    CGFloat maxY = MIN(MAX(y, attributes.frame.origin.y), sectionMaxY);
+    
+//    NSLog(@"%.2f, %.2f, %.2f", y, maxY, sectionMaxY);
+    
+    CGPoint origin = attributes.frame.origin;
+    origin.y = maxY;
+    
     attributes.frame = (CGRect){
         origin,
         attributes.frame.size
