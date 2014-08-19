@@ -21,6 +21,7 @@
 		8BD22B5619A3912C003C12CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BD22B5419A3912C003C12CE /* InfoPlist.strings */; };
 		8BD22B5819A3912C003C12CE /* StickFlowLayoutDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B5719A3912C003C12CE /* StickFlowLayoutDemoTests.m */; };
 		8BD22B6319A391A7003C12CE /* MYNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B6219A391A7003C12CE /* MYNViewController.m */; };
+		8BD22B6619A393EF003C12CE /* MYNStickyFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B6519A393EF003C12CE /* MYNStickyFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		8BD22B5719A3912C003C12CE /* StickFlowLayoutDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickFlowLayoutDemoTests.m; sourceTree = "<group>"; };
 		8BD22B6119A391A7003C12CE /* MYNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNViewController.h; sourceTree = "<group>"; };
 		8BD22B6219A391A7003C12CE /* MYNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNViewController.m; sourceTree = "<group>"; };
+		8BD22B6419A393EF003C12CE /* MYNStickyFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNStickyFlowLayout.h; sourceTree = "<group>"; };
+		8BD22B6519A393EF003C12CE /* MYNStickyFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNStickyFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				8BD22B3E19A3912C003C12CE /* Main.storyboard */,
 				8BD22B6119A391A7003C12CE /* MYNViewController.h */,
 				8BD22B6219A391A7003C12CE /* MYNViewController.m */,
+				8BD22B6419A393EF003C12CE /* MYNStickyFlowLayout.h */,
+				8BD22B6519A393EF003C12CE /* MYNStickyFlowLayout.m */,
 				8BD22B4419A3912C003C12CE /* Images.xcassets */,
 				8BD22B3319A3912C003C12CE /* Supporting Files */,
 			);
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BD22B6319A391A7003C12CE /* MYNViewController.m in Sources */,
+				8BD22B6619A393EF003C12CE /* MYNStickyFlowLayout.m in Sources */,
 				8BD22B3919A3912C003C12CE /* main.m in Sources */,
 				8BD22B3D19A3912C003C12CE /* MYNAppDelegate.m in Sources */,
 			);
