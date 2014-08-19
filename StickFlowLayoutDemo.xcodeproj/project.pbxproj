@@ -14,13 +14,13 @@
 		8BD22B3919A3912C003C12CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B3819A3912C003C12CE /* main.m */; };
 		8BD22B3D19A3912C003C12CE /* MYNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B3C19A3912C003C12CE /* MYNAppDelegate.m */; };
 		8BD22B4019A3912C003C12CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BD22B3E19A3912C003C12CE /* Main.storyboard */; };
-		8BD22B4319A3912C003C12CE /* MYNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B4219A3912C003C12CE /* MYNViewController.m */; };
 		8BD22B4519A3912C003C12CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD22B4419A3912C003C12CE /* Images.xcassets */; };
 		8BD22B4C19A3912C003C12CE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD22B4B19A3912C003C12CE /* XCTest.framework */; };
 		8BD22B4D19A3912C003C12CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD22B2C19A3912C003C12CE /* Foundation.framework */; };
 		8BD22B4E19A3912C003C12CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD22B3019A3912C003C12CE /* UIKit.framework */; };
 		8BD22B5619A3912C003C12CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BD22B5419A3912C003C12CE /* InfoPlist.strings */; };
 		8BD22B5819A3912C003C12CE /* StickFlowLayoutDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B5719A3912C003C12CE /* StickFlowLayoutDemoTests.m */; };
+		8BD22B6319A391A7003C12CE /* MYNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B6219A391A7003C12CE /* MYNViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +45,14 @@
 		8BD22B3B19A3912C003C12CE /* MYNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYNAppDelegate.h; sourceTree = "<group>"; };
 		8BD22B3C19A3912C003C12CE /* MYNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYNAppDelegate.m; sourceTree = "<group>"; };
 		8BD22B3F19A3912C003C12CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8BD22B4119A3912C003C12CE /* MYNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYNViewController.h; sourceTree = "<group>"; };
-		8BD22B4219A3912C003C12CE /* MYNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYNViewController.m; sourceTree = "<group>"; };
 		8BD22B4419A3912C003C12CE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8BD22B4A19A3912C003C12CE /* StickFlowLayoutDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StickFlowLayoutDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD22B4B19A3912C003C12CE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8BD22B5319A3912C003C12CE /* StickFlowLayoutDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StickFlowLayoutDemoTests-Info.plist"; sourceTree = "<group>"; };
 		8BD22B5519A3912C003C12CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8BD22B5719A3912C003C12CE /* StickFlowLayoutDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickFlowLayoutDemoTests.m; sourceTree = "<group>"; };
+		8BD22B6119A391A7003C12CE /* MYNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNViewController.h; sourceTree = "<group>"; };
+		8BD22B6219A391A7003C12CE /* MYNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +115,8 @@
 				8BD22B3B19A3912C003C12CE /* MYNAppDelegate.h */,
 				8BD22B3C19A3912C003C12CE /* MYNAppDelegate.m */,
 				8BD22B3E19A3912C003C12CE /* Main.storyboard */,
-				8BD22B4119A3912C003C12CE /* MYNViewController.h */,
-				8BD22B4219A3912C003C12CE /* MYNViewController.m */,
+				8BD22B6119A391A7003C12CE /* MYNViewController.h */,
+				8BD22B6219A391A7003C12CE /* MYNViewController.m */,
 				8BD22B4419A3912C003C12CE /* Images.xcassets */,
 				8BD22B3319A3912C003C12CE /* Supporting Files */,
 			);
@@ -250,7 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BD22B4319A3912C003C12CE /* MYNViewController.m in Sources */,
+				8BD22B6319A391A7003C12CE /* MYNViewController.m in Sources */,
 				8BD22B3919A3912C003C12CE /* main.m in Sources */,
 				8BD22B3D19A3912C003C12CE /* MYNAppDelegate.m in Sources */,
 			);
