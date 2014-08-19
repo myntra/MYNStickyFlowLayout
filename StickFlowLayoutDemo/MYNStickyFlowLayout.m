@@ -31,16 +31,15 @@
             [footers setObject:obj forKey:@(indexPath.section)];
             
         } else {
-            UICollectionViewLayoutAttributes *currentLastAttribute = [lastCells objectForKey:@(indexPath.section)];
 
             // Get the bottom most cell of that section
+            UICollectionViewLayoutAttributes *currentLastAttribute = [lastCells objectForKey:@(indexPath.section)];
             if ( !currentLastAttribute || indexPath.row > currentLastAttribute.indexPath.row) {
                 [lastCells setObject:obj forKey:@(indexPath.section)];
             }
 
-            UICollectionViewLayoutAttributes *currentFirstAttribute = [firstCells objectForKey:@(indexPath.section)];
-            
             // Get the top most cell of that section
+            UICollectionViewLayoutAttributes *currentFirstAttribute = [firstCells objectForKey:@(indexPath.section)];
             if ( !currentFirstAttribute || indexPath.row < currentFirstAttribute.indexPath.row) {
                 [firstCells setObject:obj forKey:@(indexPath.section)];
             }
@@ -132,7 +131,7 @@
     attributes.hidden = NO;
     
     // starting point of section
-    CGFloat sectionMinY = CGRectGetMaxY(firstCellAttributes.frame);
+    CGFloat sectionMinY = CGRectGetMinY(firstCellAttributes.frame);
     
     // bottom of the view
     CGFloat viewMaxY = CGRectGetMaxY(self.collectionView.bounds) - self.collectionView.contentInset.bottom - attributes.frame.size.height;
