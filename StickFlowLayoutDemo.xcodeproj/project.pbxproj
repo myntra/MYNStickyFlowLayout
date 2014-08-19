@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8BD22B2D19A3912C003C12CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD22B2C19A3912C003C12CE /* Foundation.framework */; };
+		8BD22B2F19A3912C003C12CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD22B2E19A3912C003C12CE /* CoreGraphics.framework */; };
+		8BD22B3119A3912C003C12CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD22B3019A3912C003C12CE /* UIKit.framework */; };
+		8BD22B3719A3912C003C12CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BD22B3519A3912C003C12CE /* InfoPlist.strings */; };
+		8BD22B3919A3912C003C12CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B3819A3912C003C12CE /* main.m */; };
+		8BD22B3D19A3912C003C12CE /* MYNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B3C19A3912C003C12CE /* MYNAppDelegate.m */; };
+		8BD22B4019A3912C003C12CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BD22B3E19A3912C003C12CE /* Main.storyboard */; };
+		8BD22B4319A3912C003C12CE /* MYNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B4219A3912C003C12CE /* MYNViewController.m */; };
+		8BD22B4519A3912C003C12CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BD22B4419A3912C003C12CE /* Images.xcassets */; };
+		8BD22B4C19A3912C003C12CE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD22B4B19A3912C003C12CE /* XCTest.framework */; };
+		8BD22B4D19A3912C003C12CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD22B2C19A3912C003C12CE /* Foundation.framework */; };
+		8BD22B4E19A3912C003C12CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD22B3019A3912C003C12CE /* UIKit.framework */; };
+		8BD22B5619A3912C003C12CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BD22B5419A3912C003C12CE /* InfoPlist.strings */; };
+		8BD22B5819A3912C003C12CE /* StickFlowLayoutDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD22B5719A3912C003C12CE /* StickFlowLayoutDemoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8BD22B4F19A3912C003C12CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BD22B2119A3912C003C12CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BD22B2819A3912C003C12CE;
+			remoteInfo = StickFlowLayoutDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8BD22B2919A3912C003C12CE /* StickFlowLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickFlowLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BD22B2C19A3912C003C12CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8BD22B2E19A3912C003C12CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8BD22B3019A3912C003C12CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8BD22B3419A3912C003C12CE /* StickFlowLayoutDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StickFlowLayoutDemo-Info.plist"; sourceTree = "<group>"; };
+		8BD22B3619A3912C003C12CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8BD22B3819A3912C003C12CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8BD22B3A19A3912C003C12CE /* StickFlowLayoutDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StickFlowLayoutDemo-Prefix.pch"; sourceTree = "<group>"; };
+		8BD22B3B19A3912C003C12CE /* MYNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYNAppDelegate.h; sourceTree = "<group>"; };
+		8BD22B3C19A3912C003C12CE /* MYNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYNAppDelegate.m; sourceTree = "<group>"; };
+		8BD22B3F19A3912C003C12CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8BD22B4119A3912C003C12CE /* MYNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYNViewController.h; sourceTree = "<group>"; };
+		8BD22B4219A3912C003C12CE /* MYNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYNViewController.m; sourceTree = "<group>"; };
+		8BD22B4419A3912C003C12CE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8BD22B4A19A3912C003C12CE /* StickFlowLayoutDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StickFlowLayoutDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BD22B4B19A3912C003C12CE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8BD22B5319A3912C003C12CE /* StickFlowLayoutDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StickFlowLayoutDemoTests-Info.plist"; sourceTree = "<group>"; };
+		8BD22B5519A3912C003C12CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8BD22B5719A3912C003C12CE /* StickFlowLayoutDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickFlowLayoutDemoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8BD22B2619A3912C003C12CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD22B2F19A3912C003C12CE /* CoreGraphics.framework in Frameworks */,
+				8BD22B3119A3912C003C12CE /* UIKit.framework in Frameworks */,
+				8BD22B2D19A3912C003C12CE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BD22B4719A3912C003C12CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD22B4C19A3912C003C12CE /* XCTest.framework in Frameworks */,
+				8BD22B4E19A3912C003C12CE /* UIKit.framework in Frameworks */,
+				8BD22B4D19A3912C003C12CE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8BD22B2019A3912C003C12CE = {
+			isa = PBXGroup;
+			children = (
+				8BD22B3219A3912C003C12CE /* StickFlowLayoutDemo */,
+				8BD22B5119A3912C003C12CE /* StickFlowLayoutDemoTests */,
+				8BD22B2B19A3912C003C12CE /* Frameworks */,
+				8BD22B2A19A3912C003C12CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8BD22B2A19A3912C003C12CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BD22B2919A3912C003C12CE /* StickFlowLayoutDemo.app */,
+				8BD22B4A19A3912C003C12CE /* StickFlowLayoutDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BD22B2B19A3912C003C12CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BD22B2C19A3912C003C12CE /* Foundation.framework */,
+				8BD22B2E19A3912C003C12CE /* CoreGraphics.framework */,
+				8BD22B3019A3912C003C12CE /* UIKit.framework */,
+				8BD22B4B19A3912C003C12CE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8BD22B3219A3912C003C12CE /* StickFlowLayoutDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8BD22B3B19A3912C003C12CE /* MYNAppDelegate.h */,
+				8BD22B3C19A3912C003C12CE /* MYNAppDelegate.m */,
+				8BD22B3E19A3912C003C12CE /* Main.storyboard */,
+				8BD22B4119A3912C003C12CE /* MYNViewController.h */,
+				8BD22B4219A3912C003C12CE /* MYNViewController.m */,
+				8BD22B4419A3912C003C12CE /* Images.xcassets */,
+				8BD22B3319A3912C003C12CE /* Supporting Files */,
+			);
+			path = StickFlowLayoutDemo;
+			sourceTree = "<group>";
+		};
+		8BD22B3319A3912C003C12CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BD22B3419A3912C003C12CE /* StickFlowLayoutDemo-Info.plist */,
+				8BD22B3519A3912C003C12CE /* InfoPlist.strings */,
+				8BD22B3819A3912C003C12CE /* main.m */,
+				8BD22B3A19A3912C003C12CE /* StickFlowLayoutDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8BD22B5119A3912C003C12CE /* StickFlowLayoutDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8BD22B5719A3912C003C12CE /* StickFlowLayoutDemoTests.m */,
+				8BD22B5219A3912C003C12CE /* Supporting Files */,
+			);
+			path = StickFlowLayoutDemoTests;
+			sourceTree = "<group>";
+		};
+		8BD22B5219A3912C003C12CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BD22B5319A3912C003C12CE /* StickFlowLayoutDemoTests-Info.plist */,
+				8BD22B5419A3912C003C12CE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8BD22B2819A3912C003C12CE /* StickFlowLayoutDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BD22B5B19A3912C003C12CE /* Build configuration list for PBXNativeTarget "StickFlowLayoutDemo" */;
+			buildPhases = (
+				8BD22B2519A3912C003C12CE /* Sources */,
+				8BD22B2619A3912C003C12CE /* Frameworks */,
+				8BD22B2719A3912C003C12CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StickFlowLayoutDemo;
+			productName = StickFlowLayoutDemo;
+			productReference = 8BD22B2919A3912C003C12CE /* StickFlowLayoutDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8BD22B4919A3912C003C12CE /* StickFlowLayoutDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BD22B5E19A3912C003C12CE /* Build configuration list for PBXNativeTarget "StickFlowLayoutDemoTests" */;
+			buildPhases = (
+				8BD22B4619A3912C003C12CE /* Sources */,
+				8BD22B4719A3912C003C12CE /* Frameworks */,
+				8BD22B4819A3912C003C12CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BD22B5019A3912C003C12CE /* PBXTargetDependency */,
+			);
+			name = StickFlowLayoutDemoTests;
+			productName = StickFlowLayoutDemoTests;
+			productReference = 8BD22B4A19A3912C003C12CE /* StickFlowLayoutDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BD22B2119A3912C003C12CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MYN;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Myntra Designs";
+				TargetAttributes = {
+					8BD22B4919A3912C003C12CE = {
+						TestTargetID = 8BD22B2819A3912C003C12CE;
+					};
+				};
+			};
+			buildConfigurationList = 8BD22B2419A3912C003C12CE /* Build configuration list for PBXProject "StickFlowLayoutDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8BD22B2019A3912C003C12CE;
+			productRefGroup = 8BD22B2A19A3912C003C12CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8BD22B2819A3912C003C12CE /* StickFlowLayoutDemo */,
+				8BD22B4919A3912C003C12CE /* StickFlowLayoutDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8BD22B2719A3912C003C12CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD22B4519A3912C003C12CE /* Images.xcassets in Resources */,
+				8BD22B3719A3912C003C12CE /* InfoPlist.strings in Resources */,
+				8BD22B4019A3912C003C12CE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BD22B4819A3912C003C12CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD22B5619A3912C003C12CE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8BD22B2519A3912C003C12CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD22B4319A3912C003C12CE /* MYNViewController.m in Sources */,
+				8BD22B3919A3912C003C12CE /* main.m in Sources */,
+				8BD22B3D19A3912C003C12CE /* MYNAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BD22B4619A3912C003C12CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD22B5819A3912C003C12CE /* StickFlowLayoutDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8BD22B5019A3912C003C12CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BD22B2819A3912C003C12CE /* StickFlowLayoutDemo */;
+			targetProxy = 8BD22B4F19A3912C003C12CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8BD22B3519A3912C003C12CE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BD22B3619A3912C003C12CE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8BD22B3E19A3912C003C12CE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BD22B3F19A3912C003C12CE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8BD22B5419A3912C003C12CE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BD22B5519A3912C003C12CE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8BD22B5919A3912C003C12CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8BD22B5A19A3912C003C12CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8BD22B5C19A3912C003C12CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StickFlowLayoutDemo/StickFlowLayoutDemo-Prefix.pch";
+				INFOPLIST_FILE = "StickFlowLayoutDemo/StickFlowLayoutDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8BD22B5D19A3912C003C12CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StickFlowLayoutDemo/StickFlowLayoutDemo-Prefix.pch";
+				INFOPLIST_FILE = "StickFlowLayoutDemo/StickFlowLayoutDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8BD22B5F19A3912C003C12CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StickFlowLayoutDemo.app/StickFlowLayoutDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StickFlowLayoutDemo/StickFlowLayoutDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "StickFlowLayoutDemoTests/StickFlowLayoutDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8BD22B6019A3912C003C12CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StickFlowLayoutDemo.app/StickFlowLayoutDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StickFlowLayoutDemo/StickFlowLayoutDemo-Prefix.pch";
+				INFOPLIST_FILE = "StickFlowLayoutDemoTests/StickFlowLayoutDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8BD22B2419A3912C003C12CE /* Build configuration list for PBXProject "StickFlowLayoutDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BD22B5919A3912C003C12CE /* Debug */,
+				8BD22B5A19A3912C003C12CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BD22B5B19A3912C003C12CE /* Build configuration list for PBXNativeTarget "StickFlowLayoutDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BD22B5C19A3912C003C12CE /* Debug */,
+				8BD22B5D19A3912C003C12CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8BD22B5E19A3912C003C12CE /* Build configuration list for PBXNativeTarget "StickFlowLayoutDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BD22B5F19A3912C003C12CE /* Debug */,
+				8BD22B6019A3912C003C12CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8BD22B2119A3912C003C12CE /* Project object */;
+}
