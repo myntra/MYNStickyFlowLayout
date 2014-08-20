@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "Param Aggarwal" => "paramaggarwal@gmail.com" }
   s.platform     = :ios
+  s.requires_arc = true
   s.source       = { :git => "https://github.com/myntra/MYNStickyFlowLayout.git", :tag => "v0.1.0" }
   s.source_files  = "Classes", "Classes/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
