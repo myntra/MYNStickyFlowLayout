@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/myntra/MYNStickyFlowLayout"
-  s.license      = "MIT"
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Param Aggarwal" => "paramaggarwal@gmail.com" }
   s.platform     = :ios
   s.requires_arc = true
