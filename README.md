@@ -2,14 +2,14 @@
 
 Drop-in sticky headers and footers for UICollectionView.
 
-![Demo screen recording gif animation](https://raw.githubusercontent.com/paramaggarwal/MYNStickyFlowLayout/master/Images/Example.gif)
+![Demo screen recording gif animation](https://raw.githubusercontent.com/myntra/MYNStickyFlowLayout/master/Images/Example.gif)
 
 ## Installation
 
 MYNStickyFlowLayout is available through [CocoaPods](http://cocoapods.org), to install
 it simply add the following line to your Podfile:
 
-    pod "MYNStickyFlowLayout", :git => 'https://github.com/paramaggarwal/MYNStickyFlowLayout.git'
+    pod "MYNStickyFlowLayout", :git => 'https://github.com/myntra/MYNStickyFlowLayout.git'
 
 Alternatively, you can just drag the files from `MYNStickyFlowLayout / Classes` into your own project.
 
@@ -19,7 +19,7 @@ To run the example project; clone the repo, and run `MYNStickFlowLayout.xcworksp
 
 Configure your collection view layout to use `MYNStickyFlowLayout`. Here's an example on how you to do it in Storyboard.
 
-![How to add to Storyboard image](https://raw.githubusercontent.com/paramaggarwal/MYNStickyFlowLayout/master/Images/AddingToStoryboard.png)
+![How to add to Storyboard image](https://raw.githubusercontent.com/myntra/MYNStickyFlowLayout/master/Images/AddingToStoryboard.png)
 
 Now all your **section headers and footers** will get the sticky effect like table view.
 
