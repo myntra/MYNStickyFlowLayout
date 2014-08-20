@@ -2,7 +2,7 @@
 
 Drop-in sticky headers and footers for UICollectionView.
 
-![Example GIF](https://raw.githubusercontent.com/paramaggarwal/MYNStickyFlowLayout/master/Example.gif)
+![Demo screen recording gif animation](https://raw.githubusercontent.com/paramaggarwal/MYNStickyFlowLayout/master/Images/Example.gif)
 
 ## Installation
 
@@ -15,17 +15,17 @@ Alternatively, you can just drag the files from `MYNStickyFlowLayout / Classes` 
 
 ## Usage
 
-To run the example project; clone the repo, and run `pod install` from the Project directory first.
+To run the example project; clone the repo, and run `MYNStickFlowLayout.xcworkspace` from the Example directory.
 
-Configure your collection view to use `MYNStickyFlowLayout`. Here's an example on how you to do it in Storyboard.
+Configure your collection view layout to use `MYNStickyFlowLayout`. Here's an example on how you to do it in Storyboard.
 
-![](http://f.cl.ly/items/32183h2q18171k323J07/csstickyheaderflowlayout-class.jpg)
+![How to add to Storyboard image](https://raw.githubusercontent.com/paramaggarwal/MYNStickyFlowLayout/master/Images/AddingToStoryboard.png)
 
-Now all your **section headers** will get the sticky effect like table view. You can disable it with one line of code.
+Now all your **section headers and footers** will get the sticky effect like table view.
 
 ## Inspiration
 
-Draws heavy inspiration from [CSStickyHeaderFlowLayout]:https://github.com/jamztang/CSStickyHeaderFlowLayout/blob/master/README.md written by James Tang.
+Draws heavy inspiration from [CSStickyHeaderFlowLayout](https://github.com/jamztang/CSStickyHeaderFlowLayout) written by James Tang.
 
 ## Author
 
