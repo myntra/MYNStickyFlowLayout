@@ -9,7 +9,7 @@ Drop-in sticky headers and footers for UICollectionView.
 MYNStickyFlowLayout is available through [CocoaPods](http://cocoapods.org), to install
 it simply add the following line to your Podfile:
 
-    pod "MYNStickyFlowLayout", :git => 'https://github.com/myntra/MYNStickyFlowLayout.git'
+    pod 'MYNStickyFlowLayout'
 
 Alternatively, you can just drag the files from `MYNStickyFlowLayout / Classes` into your own project.
 
