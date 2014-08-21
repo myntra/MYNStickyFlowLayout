@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "http://github.com/myntra/MYNStickyFlowLayout"
-  s.screenshot   = "http://raw.githubusercontent.com/myntra/MYNStickyFlowLayout/master/Images/Screenshot.png"
+  s.screenshot   = "https://raw.githubusercontent.com/myntra/MYNStickyFlowLayout/master/Images/Screenshot.png"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Param Aggarwal" => "paramaggarwal@gmail.com" }
   s.platform     = :ios
