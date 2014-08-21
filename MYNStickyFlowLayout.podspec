@@ -9,7 +9,8 @@ Pod::Spec.new do |s|
                    Just install and set your FlowLayout Custom Class to MYNStickyFlowLayout
                    DESC
 
-  s.homepage     = "https://github.com/myntra/MYNStickyFlowLayout"
+  s.homepage     = "http://github.com/myntra/MYNStickyFlowLayout"
+  s.screenshot   = "http://raw.githubusercontent.com/myntra/MYNStickyFlowLayout/master/Images/Screenshot.png"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Param Aggarwal" => "paramaggarwal@gmail.com" }
   s.platform     = :ios
