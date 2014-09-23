@@ -56,7 +56,7 @@
 
         UICollectionViewLayoutAttributes *header = headers[indexPathKey];
         // CollectionView automatically removes headers not in bounds
-        if (!header) {
+        if (self.headerReferenceSize.height && !header) {
             header = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                                                           atIndexPath:[NSIndexPath indexPathForItem:0 inSection:indexPath.section]];
 
@@ -74,7 +74,7 @@
         
         UICollectionViewLayoutAttributes *footer = footers[indexPathKey];
         // CollectionView automatically removes footers not in bounds
-        if (!footer) {
+        if (self.footerReferenceSize.height && !footer) {
             footer = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter
                                                           atIndexPath:[NSIndexPath indexPathForItem:0 inSection:indexPath.section]];
             
