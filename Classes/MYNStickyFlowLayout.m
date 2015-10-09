@@ -8,6 +8,8 @@
 
 #import "MYNStickyFlowLayout.h"
 
+NSUInteger minSectionHeaderHeight = 114;
+
 @implementation MYNStickyFlowLayout
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
@@ -98,31 +100,45 @@
 
 - (void)updateHeaderAttributes:(UICollectionViewLayoutAttributes *)attributes lastCellAttributes:(UICollectionViewLayoutAttributes *)lastCellAttributes
 {
-    attributes.zIndex = 1024;
-    attributes.hidden = NO;
-
-    // last point of section minus height of header
-    CGFloat sectionMaxY = CGRectGetMaxY(lastCellAttributes.frame) - attributes.frame.size.height;
-
-    // top of the view
-    CGFloat viewMinY = CGRectGetMinY(self.collectionView.bounds) + self.collectionView.contentInset.top;
-
-    // larger of sticky position or actual position
-    CGFloat largerYPosition = MAX(viewMinY, attributes.frame.origin.y);
-    
-    // smaller of calculated position or end of section
-    CGFloat finalPosition = MIN(largerYPosition, sectionMaxY);
-
-//    NSLog(@"%.2f, %.2f, %.2f, %.2f", sectionMaxY, viewMinY, largerYPosition, finalPosition);
-
-    // update y position
-    CGPoint origin = attributes.frame.origin;
-    origin.y = finalPosition;
-
-    attributes.frame = (CGRect){
-        origin,
-        attributes.frame.size
-    };
+    if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
+        attributes.zIndex = 1024;
+        attributes.hidden = NO;
+        
+        // last point of section minus height of header
+        CGFloat sectionMaxY = CGRectGetMaxY(lastCellAttributes.frame) - attributes.frame.size.height;
+        
+        // top of the view
+        CGFloat viewMinY = CGRectGetMinY(self.collectionView.bounds) + self.collectionView.contentInset.top;
+        
+        // larger of sticky position or actual position
+        CGFloat largerYPosition = MAX(viewMinY, attributes.frame.origin.y);
+        
+        // smaller of calculated position or end of section
+        CGFloat finalPosition = MIN(largerYPosition, sectionMaxY);
+        
+        //    NSLog(@"%.2f, %.2f, %.2f, %.2f", sectionMaxY, viewMinY, largerYPosition, finalPosition);
+        
+        // update y position
+        CGPoint origin = attributes.frame.origin;
+        origin.y = finalPosition;
+        
+        attributes.frame = (CGRect){
+            origin,
+            attributes.frame.size
+        };
+        
+        if (self.collectionView.contentOffset.y > 0) {
+            CGRect rect = attributes.frame;
+            rect.size.height -= self.collectionView.contentOffset.y;
+            if (rect.size.height >= minSectionHeaderHeight) {
+                attributes.frame = rect;
+            } else {
+                rect.size.height = minSectionHeaderHeight;
+                attributes.frame = rect;
+            }
+        }
+        [self.resizableHeaderDelegate sectionHeaderResizedToHeight:attributes.frame.size.height];
+    }
 }
 
 - (void)updateFooterAttributes:(UICollectionViewLayoutAttributes *)attributes firstCellAttributes:(UICollectionViewLayoutAttributes *)firstCellAttributes
