@@ -8,7 +8,9 @@
 
 #import "MYNStickyFlowLayout.h"
 
-NSUInteger minSectionHeaderHeight = 114;
+NSUInteger minSectionHeaderHeightIpad = 114;
+NSUInteger minSectionHeaderHeightIphone = 85;
+NSUInteger minSectionHeaderWidth = 550/2;
 
 @implementation MYNStickyFlowLayout
 
@@ -127,17 +129,58 @@ NSUInteger minSectionHeaderHeight = 114;
             attributes.frame.size
         };
         
-        if (self.collectionView.contentOffset.y > 0) {
-            CGRect rect = attributes.frame;
-            rect.size.height -= self.collectionView.contentOffset.y;
-            if (rect.size.height >= minSectionHeaderHeight) {
-                attributes.frame = rect;
-            } else {
-                rect.size.height = minSectionHeaderHeight;
-                attributes.frame = rect;
+        NSUInteger minSectionHeaderHeight = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? minSectionHeaderHeightIpad : minSectionHeaderHeightIphone;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            if (self.collectionView.contentOffset.y > 0) {
+                CGRect rect = attributes.frame;
+                rect.size.height -= self.collectionView.contentOffset.y;
+                if (rect.size.height >= minSectionHeaderHeight) {
+                    attributes.frame = rect;
+                } else {
+                    rect.size.height = minSectionHeaderHeight;
+                    attributes.frame = rect;
+                }
             }
+            [self.resizableHeaderDelegate sectionHeaderResizedToHeight:attributes.frame.size.height];
         }
-        [self.resizableHeaderDelegate sectionHeaderResizedToHeight:attributes.frame.size.height];
+    } else {
+        attributes.zIndex = 768;
+        attributes.hidden = NO;
+        
+        // last point of section minus height of header
+        CGFloat sectionMaxX = CGRectGetMaxX(lastCellAttributes.frame) - attributes.frame.size.width;
+        
+        // top of the view
+        CGFloat viewMinX = CGRectGetMinX(self.collectionView.bounds) + self.collectionView.contentInset.left;
+        
+        // larger of sticky position or actual position
+        CGFloat largerXPosition = MAX(viewMinX, attributes.frame.origin.x);
+        
+        // smaller of calculated position or end of section
+        CGFloat finalPosition = MIN(largerXPosition, sectionMaxX);
+        
+        // update x position
+        CGPoint origin = attributes.frame.origin;
+        origin.x = finalPosition;
+        
+        attributes.frame = (CGRect){
+            origin,
+            attributes.frame.size
+        };
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            if (self.collectionView.contentOffset.x > 0) {
+                CGRect rect = attributes.frame;
+                rect.size.width -= self.collectionView.contentOffset.x;
+                if (rect.size.width >= minSectionHeaderWidth) {
+                    attributes.frame = rect;
+                } else {
+                    rect.size.width = minSectionHeaderWidth;
+                    attributes.frame = rect;
+                }
+            }
+            [self.resizableHeaderDelegate sectionHeaderResizedToWidth:attributes.frame.size.width];
+        }
     }
 }
 

@@ -11,6 +11,7 @@
 @protocol PKResizableHeaderDelegate <NSObject>
 
 - (void)sectionHeaderResizedToHeight:(CGFloat)height;
+- (void)sectionHeaderResizedToWidth:(CGFloat)width;
 
 @end
 
