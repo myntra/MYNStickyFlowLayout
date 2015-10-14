@@ -10,7 +10,8 @@
 
 NSUInteger minSectionHeaderHeightIpad = 114;
 NSUInteger minSectionHeaderHeightIphone = 85;
-NSUInteger minSectionHeaderWidth = 550/2;
+NSUInteger minSectionHeaderWidthIpad = 550/2;
+NSUInteger minSectionHeaderWidthIphone = 339/2;
 
 @implementation MYNStickyFlowLayout
 
@@ -130,19 +131,17 @@ NSUInteger minSectionHeaderWidth = 550/2;
         };
         
         NSUInteger minSectionHeaderHeight = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? minSectionHeaderHeightIpad : minSectionHeaderHeightIphone;
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            if (self.collectionView.contentOffset.y > 0) {
-                CGRect rect = attributes.frame;
-                rect.size.height -= self.collectionView.contentOffset.y;
-                if (rect.size.height >= minSectionHeaderHeight) {
-                    attributes.frame = rect;
-                } else {
-                    rect.size.height = minSectionHeaderHeight;
-                    attributes.frame = rect;
-                }
+        if (self.collectionView.contentOffset.y > 0) {
+            CGRect rect = attributes.frame;
+            rect.size.height -= self.collectionView.contentOffset.y;
+            if (rect.size.height >= minSectionHeaderHeight) {
+                attributes.frame = rect;
+            } else {
+                rect.size.height = minSectionHeaderHeight;
+                attributes.frame = rect;
             }
-            [self.resizableHeaderDelegate sectionHeaderResizedToHeight:attributes.frame.size.height];
         }
+        [self.resizableHeaderDelegate sectionHeaderResizedToHeight:attributes.frame.size.height];
     } else {
         attributes.zIndex = 768;
         attributes.hidden = NO;
@@ -168,19 +167,18 @@ NSUInteger minSectionHeaderWidth = 550/2;
             attributes.frame.size
         };
         
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            if (self.collectionView.contentOffset.x > 0) {
-                CGRect rect = attributes.frame;
-                rect.size.width -= self.collectionView.contentOffset.x;
-                if (rect.size.width >= minSectionHeaderWidth) {
-                    attributes.frame = rect;
-                } else {
-                    rect.size.width = minSectionHeaderWidth;
-                    attributes.frame = rect;
-                }
+        NSUInteger minSectionHeaderWidth = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? minSectionHeaderWidthIpad : minSectionHeaderWidthIphone;
+        if (self.collectionView.contentOffset.x > 0) {
+            CGRect rect = attributes.frame;
+            rect.size.width -= self.collectionView.contentOffset.x;
+            if (rect.size.width >= minSectionHeaderWidth) {
+                attributes.frame = rect;
+            } else {
+                rect.size.width = minSectionHeaderWidth;
+                attributes.frame = rect;
             }
-            [self.resizableHeaderDelegate sectionHeaderResizedToWidth:attributes.frame.size.width];
         }
+        [self.resizableHeaderDelegate sectionHeaderResizedToWidth:attributes.frame.size.width];
     }
 }
 
