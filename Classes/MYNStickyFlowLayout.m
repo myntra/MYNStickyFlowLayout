@@ -8,11 +8,6 @@
 
 #import "MYNStickyFlowLayout.h"
 
-NSUInteger minSectionHeaderHeightIpad = 114;
-NSUInteger minSectionHeaderHeightIphone = 85;
-NSUInteger minSectionHeaderWidthIpad = 550/2;
-NSUInteger minSectionHeaderWidthIphone = 339/2;
-
 @implementation MYNStickyFlowLayout
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
@@ -119,8 +114,6 @@ NSUInteger minSectionHeaderWidthIphone = 339/2;
         // smaller of calculated position or end of section
         CGFloat finalPosition = MIN(largerYPosition, sectionMaxY);
         
-        //    NSLog(@"%.2f, %.2f, %.2f, %.2f", sectionMaxY, viewMinY, largerYPosition, finalPosition);
-        
         // update y position
         CGPoint origin = attributes.frame.origin;
         origin.y = finalPosition;
@@ -130,14 +123,13 @@ NSUInteger minSectionHeaderWidthIphone = 339/2;
             attributes.frame.size
         };
         
-        NSUInteger minSectionHeaderHeight = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? minSectionHeaderHeightIpad : minSectionHeaderHeightIphone;
         if (self.collectionView.contentOffset.y > 0) {
             CGRect rect = attributes.frame;
             rect.size.height -= self.collectionView.contentOffset.y;
-            if (rect.size.height >= minSectionHeaderHeight) {
+            if (rect.size.height >= self.minSectionHeaderHeight) {
                 attributes.frame = rect;
             } else {
-                rect.size.height = minSectionHeaderHeight;
+                rect.size.height = self.minSectionHeaderHeight;
                 attributes.frame = rect;
             }
         }
@@ -167,14 +159,13 @@ NSUInteger minSectionHeaderWidthIphone = 339/2;
             attributes.frame.size
         };
         
-        NSUInteger minSectionHeaderWidth = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? minSectionHeaderWidthIpad : minSectionHeaderWidthIphone;
         if (self.collectionView.contentOffset.x > 0) {
             CGRect rect = attributes.frame;
             rect.size.width -= self.collectionView.contentOffset.x;
-            if (rect.size.width >= minSectionHeaderWidth) {
+            if (rect.size.width >= self.minSectionHeaderWidth) {
                 attributes.frame = rect;
             } else {
-                rect.size.width = minSectionHeaderWidth;
+                rect.size.width = self.minSectionHeaderWidth;
                 attributes.frame = rect;
             }
         }
@@ -198,8 +189,6 @@ NSUInteger minSectionHeaderWidthIphone = 339/2;
     
     // larger of calculated position or end of section
     CGFloat finalPosition = MAX(smallerYPosition, sectionMinY);
-    
-//    NSLog(@"%.2f, %.2f, %.2f, %.2f", sectionMinY, viewMaxY, smallerYPosition, finalPosition);
     
     // update y position
     CGPoint origin = attributes.frame.origin;

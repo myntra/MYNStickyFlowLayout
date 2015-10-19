@@ -19,4 +19,7 @@
 
 @property (nonatomic, weak) id<PKResizableHeaderDelegate>resizableHeaderDelegate;
 
+@property (nonatomic, assign) NSUInteger minSectionHeaderHeight;
+@property (nonatomic, assign) NSUInteger minSectionHeaderWidth;
+
 @end
