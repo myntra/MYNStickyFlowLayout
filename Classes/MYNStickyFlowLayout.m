@@ -8,37 +8,8 @@
 
 #import "MYNStickyFlowLayout.h"
 
-@interface MYNStickyFlowLayout ()
-
-@property (nonatomic, strong) NSMutableArray* indexPathsToAnimate;
-
-@property (nonatomic, strong) NSMutableDictionary* currentCellAttributes;
-@property (nonatomic, strong) NSMutableDictionary* cachedCellAttributes;
-
-@property (nonatomic, strong) NSMutableArray* insertedIndexPaths;
-@property (nonatomic, strong) NSMutableArray* removedIndexPaths;
-
-@end
 
 @implementation MYNStickyFlowLayout
-
-- (id)init {
-    self = [super init];
-    if (self) {
-        self.currentCellAttributes = [NSMutableDictionary dictionary];
-    }
-    return self;
-}
-
-
-#pragma mark - subclassing layout
-
-- (void)prepareLayout {
-    [super prepareLayout];
-    
-    self.cachedCellAttributes = [[NSMutableDictionary alloc] initWithDictionary:self.currentCellAttributes copyItems:YES];
-}
-
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
     NSMutableArray *allItems = [[super layoutAttributesForElementsInRect:rect] mutableCopy];
@@ -76,11 +47,6 @@
 
         // For iOS 7.0, the cell zIndex should be above sticky section header
         attributes.zIndex = 1;
-        
-        if (attributes.representedElementCategory == UICollectionElementCategoryCell) {
-            [self.currentCellAttributes setObject:attributes
-                                           forKey:attributes.indexPath];
-        }
     }];
 
     [lastCells enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -126,61 +92,6 @@
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
     return YES;
 }
-
-
-#pragma mark - subclassing animation
-
-- (void)prepareForCollectionViewUpdates:(NSArray *)updateItems {
-    [super prepareForCollectionViewUpdates:updateItems];
-    
-    self.insertedIndexPaths = [NSMutableArray array];
-    self.removedIndexPaths = [NSMutableArray array];
-    
-    for (UICollectionViewUpdateItem *updateItem in updateItems) {
-        switch (updateItem.updateAction) {
-            case UICollectionUpdateActionInsert:
-                [self.insertedIndexPaths addObject:updateItem.indexPathAfterUpdate];
-                break;
-            case UICollectionUpdateActionDelete:
-                [self.removedIndexPaths addObject:updateItem.indexPathBeforeUpdate];
-                break;
-            default:
-                break;
-        }
-    }
-}
-
-- (UICollectionViewLayoutAttributes *)initialLayoutAttributesForAppearingItemAtIndexPath:(NSIndexPath *)itemIndexPath {
-    UICollectionViewLayoutAttributes* attributes = [self layoutAttributesForItemAtIndexPath:itemIndexPath];
-    
-    if ([self.insertedIndexPaths containsObject:itemIndexPath]) {
-        attributes = [[self.currentCellAttributes objectForKey:itemIndexPath] copy];
-        attributes.alpha = 0;
-    }
-    
-    return attributes;
-}
-
-
--(UICollectionViewLayoutAttributes *)finalLayoutAttributesForDisappearingItemAtIndexPath:(NSIndexPath *)itemIndexPath{
-    
-    UICollectionViewLayoutAttributes* attributes = [self layoutAttributesForItemAtIndexPath:itemIndexPath];
-    
-    if ([self.removedIndexPaths containsObject:itemIndexPath]) {
-        attributes = [[self.cachedCellAttributes objectForKey:itemIndexPath] copy];
-        attributes.alpha = 0;
-    }
-    
-    return attributes;
-}
-
-- (void)finalizeCollectionViewUpdates {
-    [super finalizeCollectionViewUpdates];
-    
-    self.insertedIndexPaths = nil;
-    self.removedIndexPaths = nil;
-}
-
 
 #pragma mark Helper
 
