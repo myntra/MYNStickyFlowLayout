@@ -122,17 +122,19 @@
             attributes.frame.size
         };
         
-        if (self.collectionView.contentOffset.y > 0) {
-            CGRect rect = attributes.frame;
-            rect.size.height -= self.collectionView.contentOffset.y;
-            if (rect.size.height >= self.minSectionHeaderHeight) {
-                attributes.frame = rect;
-            } else {
-                rect.size.height = self.minSectionHeaderHeight;
-                attributes.frame = rect;
+        if (self.minSectionHeaderHeight > 0) {
+            if (self.collectionView.contentOffset.y > 0) {
+                CGRect rect = attributes.frame;
+                rect.size.height -= self.collectionView.contentOffset.y;
+                if (rect.size.height >= self.minSectionHeaderHeight) {
+                    attributes.frame = rect;
+                } else {
+                    rect.size.height = self.minSectionHeaderHeight;
+                    attributes.frame = rect;
+                }
             }
+            [self.resizableHeaderDelegate sectionHeaderResizedToHeight:attributes.frame.size.height];
         }
-        [self.resizableHeaderDelegate sectionHeaderResizedToHeight:attributes.frame.size.height];
     } else {
         attributes.zIndex = 768;
         attributes.hidden = NO;
@@ -158,17 +160,19 @@
             attributes.frame.size
         };
         
-        if (self.collectionView.contentOffset.x > 0) {
-            CGRect rect = attributes.frame;
-            rect.size.width -= self.collectionView.contentOffset.x;
-            if (rect.size.width >= self.minSectionHeaderWidth) {
-                attributes.frame = rect;
-            } else {
-                rect.size.width = self.minSectionHeaderWidth;
-                attributes.frame = rect;
+        if (self.minSectionHeaderWidth) {
+            if (self.collectionView.contentOffset.x > 0) {
+                CGRect rect = attributes.frame;
+                rect.size.width -= self.collectionView.contentOffset.x;
+                if (rect.size.width >= self.minSectionHeaderWidth) {
+                    attributes.frame = rect;
+                } else {
+                    rect.size.width = self.minSectionHeaderWidth;
+                    attributes.frame = rect;
+                }
             }
+            [self.resizableHeaderDelegate sectionHeaderResizedToWidth:attributes.frame.size.width];
         }
-        [self.resizableHeaderDelegate sectionHeaderResizedToWidth:attributes.frame.size.width];
     }
 }
 
