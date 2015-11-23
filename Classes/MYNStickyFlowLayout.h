@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PKResizableHeaderDelegate <NSObject>
+
+- (void)sectionHeaderResizedToHeight:(CGFloat)height;
+- (void)sectionHeaderResizedToWidth:(CGFloat)width;
+
+@end
+
 @interface MYNStickyFlowLayout : UICollectionViewFlowLayout
+
+@property (nonatomic, weak) id<PKResizableHeaderDelegate>resizableHeaderDelegate;
+
+@property (nonatomic, assign) NSUInteger minSectionHeaderHeight;
+@property (nonatomic, assign) NSUInteger minSectionHeaderWidth;
 
 @end

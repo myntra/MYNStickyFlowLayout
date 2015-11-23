@@ -9,13 +9,13 @@ Pod::Spec.new do |s|
                    Just install and set your FlowLayout Custom Class to MYNStickyFlowLayout
                    DESC
 
-  s.homepage     = "http://github.com/myntra/MYNStickyFlowLayout"
-  s.screenshot   = "https://raw.githubusercontent.com/myntra/MYNStickyFlowLayout/master/Images/Screenshot.png"
+  s.homepage     = "http://github.com/sprylab/MYNStickyFlowLayout"
+  s.screenshot   = "https://raw.githubusercontent.com/sprylab/MYNStickyFlowLayout/master/Images/Screenshot.png"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Param Aggarwal" => "paramaggarwal@gmail.com" }
   s.platform     = :ios
   s.requires_arc = true
-  s.source       = { :git => "https://github.com/myntra/MYNStickyFlowLayout.git", :tag => "v0.1.2" }
+  s.source       = { :git => "https://github.com/sprylab/MYNStickyFlowLayout.git", :tag => "v0.1.2" }
   s.source_files  = "Classes", "Classes/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
